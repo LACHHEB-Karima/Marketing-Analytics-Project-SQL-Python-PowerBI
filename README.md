@@ -1,318 +1,294 @@
-# 📊 Marketing Analytics — From Data to Marketing Insights
+# 📊 Marketing Analytics — SQL, Python & Power BI
 
-**End-to-end Marketing Analytics project using SQL, Python and Power BI to understand customer behavior, marketing engagement, conversion and customer satisfaction.**
+> **End-to-end marketing analytics project transforming customer, engagement, conversion and review data into actionable business insights.**
 
----
+This project demonstrates a complete analytics workflow using **SQL, Python and Power BI**, from data preparation and customer-review enrichment to analytical modeling, interactive visualization and executive-level recommendations.
 
-## 🎯 Business Problem
-
-Marketing teams have access to large amounts of customer and marketing data, but raw data does not automatically translate into actionable decisions.
-
-The business needed to answer critical questions such as:
-
-* **Who are our customers and what characterizes them?**
-* **Which marketing and social media activities generate the most engagement?**
-* **How do customers progress through the purchasing journey?**
-* **Where are potential conversion bottlenecks?**
-* **Which products and campaigns attract the most attention?**
-* **How satisfied are customers with their experience?**
-* **What are customers actually saying in their reviews?**
-
-The main challenge was therefore to transform fragmented customer, product, engagement, journey and review data into **one reliable analytical view that marketing teams could use to make data-driven decisions.**
+The final analysis evaluates **2025 marketing performance**, focusing on conversion efficiency, product performance, social-media engagement and customer experience.
 
 ---
 
-# 💡 Solution
+## 🎯 Business Objective
 
-I designed an end-to-end analytics pipeline combining **SQL, Python and Power BI**.
+The objective was to answer key marketing and customer-experience questions:
+
+* How did conversion performance evolve during 2025?
+* Which products generated the strongest conversion rates?
+* How did marketing reach and engagement change compared with 2024?
+* What does customer feedback reveal about satisfaction?
+* Which areas should marketing teams prioritize for 2026?
+
+The project was designed to move beyond descriptive reporting and translate the data into **business actions and priorities**.
+
+---
+
+## 🔄 Analytics Workflow
 
 ```text
-                 RAW MARKETING DATA
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │      SQL SERVER     │
-              │                     │
-              │ Cleaning            │
-              │ Transformation      │
-              │ Data Quality        │
-              │ Analytical Views    │
-              └──────────┬──────────┘
-                         │
-             ┌───────────┴───────────┐
-             │                       │
-             ▼                       ▼
-      ┌──────────────┐       ┌────────────────┐
-      │    PYTHON    │       │    POWER BI    │
-      │              │       │                │
-      │ Sentiment    │       │ KPIs           │
-      │ Analysis     │       │ Visualizations │
-      │ with VADER   │       │ Dashboard      │
-      └──────┬───────┘       └───────┬────────┘
-             │                       │
-             └───────────┬───────────┘
-                         ▼
-                 BUSINESS INSIGHTS
+Raw Marketing Data
+        ↓
+SQL Data Preparation
+        ↓
+Python Review Enrichment
+        ↓
+Analytical Dataset
+        ↓
+Power BI Data Model
+        ↓
+Interactive Dashboards
+        ↓
+2025 Performance Analysis
+        ↓
+Business Recommendations
 ```
 
-### SQL — Building a reliable analytical dataset
+### 1. SQL — Data Preparation & Transformation
 
-SQL Server was used to clean and transform the raw data and create analytical views covering:
+SQL was used to prepare the analytical datasets and structure the data for reporting.
 
-* Customers & geography
-* Products & price categories
-* Marketing engagement
-* Customer journeys
-* Customer reviews
+Key activities included:
 
-The preparation included data cleaning, transformation, deduplication, missing-value treatment and the creation of business-oriented metrics.
+* Data cleaning and preparation
+* Customer and product data transformation
+* Fact and dimension preparation
+* Data enrichment through joins
+* Aggregations required for marketing KPIs
+* Preparation of datasets for Power BI
 
-### Python — Understanding customer sentiment
-
-Customer review text was enriched using **VADER sentiment analysis**.
-
-Instead of analyzing ratings alone, the project combines:
-
-**Rating + Review Text + Sentiment Score**
-
-to obtain a deeper understanding of customer experience.
-
-### Power BI — Turning analysis into decisions
-
-The prepared data was transformed into an interactive dashboard covering four key business perspectives:
-
-* **Overview**
-* **Social Media Performance**
-* **Conversion**
-* **Customer Reviews & Sentiment**
+**File:** `MarketingData-Preparation.sql`
 
 ---
 
-# 📊 Dashboard
+### 2. Python — Customer Review Enrichment
+
+Python was used to enrich customer-review data with sentiment information.
+
+The notebook performs review processing and creates an enriched dataset that can be analyzed alongside customer experience metrics.
+
+**Files:**
+
+* `customer_reviews_enrichment.ipynb`
+* `customer_reviews_with_sentiment.csv`
+
+This layer connects quantitative performance indicators with qualitative customer feedback.
+
+---
+
+### 3. Power BI — Data Modeling & Visualization
+
+Power BI was used to transform the prepared datasets into an interactive marketing analytics dashboard.
+
+The dashboard focuses on four major analytical areas:
+
+* **Executive Performance**
+* **Conversion Performance**
+* **Product Performance**
+* **Social Engagement**
+* **Customer Feedback & Sentiment**
+
+**File:** `MarketingAnalyticsDashboard.pbix`
+
+---
+
+# 📈 2025 Performance Results
 
 ## Executive Overview
 
-The Overview page provides a consolidated view of the main marketing and customer indicators, giving decision-makers a quick understanding of overall performance.
+2025 maintained relatively stable conversion performance despite a significant reduction in marketing reach.
 
-![Marketing Analytics Overview](images/Overview.png)
+| KPI             |         2025 |   YoY Change |
+| --------------- | -----------: | -----------: |
+| Conversion Rate |    **8.55%** | **+0.07 pp** |
+| Views           |    **1.10M** |   **-63.2%** |
+| Clicks          |    **67.6K** |   **-85.2%** |
+| Average Rating  | **3.66 / 5** |    **-0.01** |
 
----
+The key signal is that **conversion remained resilient while traffic contracted sharply**.
 
-## 📱 Social Media Performance
-
-This page focuses on digital engagement and helps identify which marketing activities and content generate customer interactions.
-
-It provides visibility into metrics such as:
-
-* Views
-* Clicks
-* Likes
-* Content performance
-* Campaign engagement
-* Engagement trends
-
-![Social Media Analysis](images/Social%20Media%20Details.png)
+This suggests that the remaining audience continued to convert at a broadly similar annual rate, while the major weakness was the ability to generate and maintain reach.
 
 ---
 
-## 🔄 Conversion Analysis
+## 📊 Conversion Performance
 
-The Conversion page analyzes the customer journey from interaction to conversion.
+Annual conversion reached **8.55%**, compared with **8.48% in 2024**.
 
-It helps identify:
+Monthly performance was highly seasonal:
 
-* Customer journey stages
-* Conversion performance
-* Customer actions
-* Journey duration
-* Potential drop-off points
-* Products associated with customer progression
+* **September:** 15.15% — strongest month
+* **July:** 2.94% — weakest month
+* **December:** 12.82% — strong year-end recovery
 
-![Conversion Analysis](images/conversion%20details.png)
+March and September represented clear conversion peaks, while July highlighted a significant mid-year performance gap.
 
----
+### Business implication
 
-## ⭐ Customer Reviews & Sentiment
-
-This page combines traditional customer ratings with NLP-based sentiment analysis.
-
-The objective is to go beyond:
-
-> **"What rating did the customer give?"**
-
-and answer:
-
-> **"What is the customer actually expressing?"**
-
-The analysis identifies positive, negative, neutral and mixed customer feedback.
-
-![Customer Reviews Analysis](images/Customer%20Reviews%20Details.png)
+The priority is to identify what drove the strongest months and replicate those conditions during weaker periods.
 
 ---
 
-# 📈 Results & Business Insights
+## 🏆 Product Performance
 
-The project provides a unified view of **customer behavior, marketing engagement, conversion and customer experience**.
+A small group of products generated substantially higher conversion rates:
 
-### 👥 Customer Behavior
+| Product        | Conversion |
+| -------------- | ---------: |
+| Hockey Stick   |  **20.8%** |
+| Climbing Rope  |  **20.0%** |
+| Surfboard      |  **18.9%** |
+| Cycling Helmet |  **18.2%** |
+| Baseball Glove |  **11.5%** |
+| Dumbbells      |   **9.4%** |
 
-The analysis makes it possible to identify customer characteristics and geographic patterns, providing a foundation for better segmentation and targeted marketing strategies.
+These products represent potential candidates for:
 
-### 📱 Marketing Engagement
+* Paid campaign prioritization
+* Seasonal promotions
+* Merchandising
+* Product-level experimentation
 
-The social media analysis allows marketing teams to compare engagement across different types of content and campaigns.
+The analysis recommends testing whether the success of these high-converting products can be replicated across weaker-performing products.
 
-This helps answer:
+---
 
-* Which content attracts the most attention?
-* Which activities generate interactions?
-* Where should marketing efforts be prioritized?
+## 📱 Social Engagement
 
-### 🔄 Customer Conversion
+Marketing reach contracted substantially during 2025.
 
-The customer journey analysis provides visibility into how customers move through different stages.
+| Metric       |          2025 |                YoY |
+| ------------ | ------------: | -----------------: |
+| Views        | **1,096,704** |         **-63.2%** |
+| Clicks       |    **67,632** |         **-85.2%** |
+| Likes        |     **4,342** |         **-94.1%** |
+| Click / View |     **6.17%** |     15.37% in 2024 |
 
-This allows teams to identify potential friction points and opportunities to optimize the conversion funnel.
+Monthly views declined from approximately **168K in January to 46K in September**, followed by a modest Q4 recovery.
 
-### ⭐ Customer Experience
+The analysis therefore identifies **reach recovery and content-to-action efficiency** as major priorities.
 
-Combining ratings with sentiment analysis provides a richer understanding of customer satisfaction.
+---
 
-A numerical rating alone can hide important information contained in the customer's written feedback. Sentiment analysis makes this information easier to analyze at scale.
+## ⭐ Customer Feedback & Sentiment
 
-### 🎯 Overall Business Value
+Customer feedback remained generally positive, but the results indicate room for improvement.
 
-The project turns multiple disconnected datasets into a **single analytical decision-support solution**.
+### Rating
 
-The resulting workflow is:
+**Average rating: 3.66 / 5**
+
+The target identified in the analysis is to move toward **4.0+**.
+
+### Review distribution
+
+* **5 stars:** 138
+* **4 stars:** 154
+* **3 stars:** 98
+* **2 stars:** 60
+* **1 star:** 27
+
+### Sentiment
+
+* Positive: **292**
+* Negative: **81**
+* Mixed Negative: **56**
+* Mixed Positive: **41**
+* Neutral: **7**
+
+The analysis combines quantitative ratings with sentiment classification to identify customer-experience improvement opportunities.
+
+---
+
+# 💡 Key Business Recommendations
+
+## 1. Rebuild Marketing Reach
+
+* Diagnose the sustained decline in monthly views.
+* Refresh content formats and distribution cadence.
+* Strengthen calls-to-action and audience targeting.
+* Use the Q4 recovery as a base for scaling.
+
+## 2. Scale Conversion
+
+* Replicate tactics from high-performing months such as March, September and December.
+* Prioritize high-converting products such as Hockey Stick, Climbing Rope and Surfboard.
+* Use seasonal offers around proven demand periods.
+* Monitor product-level conversion regularly.
+
+## 3. Improve Customer Experience
+
+* Move the average rating from **3.66 toward 4.0+**.
+* Investigate recurring negative and mixed-review themes.
+* Track rating movement by product and month.
+
+---
+
+# 🛠️ Technology Stack
+
+| Area               | Technology          |
+| ------------------ | ------------------- |
+| Data Preparation   | **SQL Server**      |
+| Data Analysis      | **Python / Pandas** |
+| Sentiment Analysis | **Python**          |
+| Data Modeling      | **Power BI**        |
+| Visualization      | **Power BI**        |
+| Business Analysis  | **SQL + Power BI**  |
+| Reporting          | **PowerPoint**      |
+
+---
+
+# 📁 Repository Structure
 
 ```text
-Raw Data
-   ↓
-Reliable Data
-   ↓
-Customer & Marketing Analysis
-   ↓
-Interactive Dashboard
-   ↓
-Actionable Business Insights
+Marketing-Analytics-Project-SQL-Python-PowerBI/
+│
+├── MarketingAnalyticsDashboard.pbix
+├── MarketingData-Preparation.sql
+├── customer_reviews_enrichment.ipynb
+├── customer_reviews_with_sentiment.csv
+├── images/
+│   ├── Overview.png
+│   ├── Conversion Details.png
+│   ├── Social Media Details.png
+│   └── Customer Reviews Details.png
+│
+├── Marketing_Analytics_2025_Presentation.pptx
+└── README.md
 ```
 
-This enables marketing teams to move from **descriptive reporting toward data-driven decision-making.**
-
 ---
 
-# ❓ Business Questions Answered
+# 📊 Dashboard & Presentation
 
-The solution was designed around practical marketing questions:
+The project includes an interactive **Power BI dashboard** and a dedicated **2025 Performance Review presentation** designed to communicate the findings to business stakeholders.
 
-| Business Area          | Questions Answered                                                              |
-| ---------------------- | ------------------------------------------------------------------------------- |
-| **Customers**          | Who are our customers? Where are they located?                                  |
-| **Products**           | Which products attract the most attention? How do price categories perform?     |
-| **Engagement**         | Which content and campaigns generate the strongest engagement?                  |
-| **Customer Journey**   | How do customers progress through the journey? Where are potential bottlenecks? |
-| **Conversion**         | Which stages and interactions are associated with conversion?                   |
-| **Reviews**            | How do customers rate their experience?                                         |
-| **Sentiment**          | Is customer feedback predominantly positive, negative or neutral?               |
-| **Marketing Strategy** | Where should marketing teams focus their optimization efforts?                  |
-
----
-
-# 🛠️ Tools & Technologies
-
-| Tool                 | Purpose                                                                |
-| -------------------- | ---------------------------------------------------------------------- |
-| **SQL Server / SQL** | Data cleaning, transformation, joins, aggregation and analytical views |
-| **Python**           | Data analysis and customer review enrichment                           |
-| **Pandas**           | Data manipulation                                                      |
-| **NLTK / VADER**     | Sentiment analysis                                                     |
-| **Power BI**         | Interactive dashboards and data visualization                          |
-| **DAX**              | Business metrics and analytical calculations                           |
-| **Git / GitHub**     | Version control                                                        |
-
----
-
-# 🚀 Future Improvements
-
-The current solution provides a strong foundation, but several improvements could increase its business value.
-
-### 1. Advanced Customer Segmentation
-
-Implement customer segmentation using **RFM analysis** and clustering techniques to identify groups such as:
-
-* High-value customers
-* Loyal customers
-* At-risk customers
-* New customers
-
-### 2. Predictive Conversion Analysis
-
-Build a machine learning model to predict the probability that a customer will convert based on:
-
-* Customer profile
-* Product interactions
-* Engagement
-* Journey behavior
-
-This would move the project from **descriptive analytics to predictive analytics**.
-
-### 3. Advanced NLP
-
-VADER provides general sentiment classification. A future version could use transformer-based models such as **BERT** to perform:
-
-* More contextual sentiment analysis
-* Aspect-based sentiment analysis
-* Automatic identification of product/service issues
-* Topic extraction from reviews
-
-### 4. Marketing Campaign Optimization
-
-Extend the analysis to calculate marketing KPIs such as:
-
-* Conversion Rate
-* Click-Through Rate
-* Customer Acquisition Cost
-* Return on Ad Spend
-* Customer Lifetime Value
-
-This would allow the dashboard to move from monitoring performance toward **marketing ROI optimization**.
-
-### 5. Automated Data Pipeline
-
-The current analytical workflow could be transformed into an automated pipeline with scheduled data ingestion, transformation and dashboard refresh.
-
-This would enable marketing teams to work with **continuously updated insights rather than static datasets**.
+The presentation summarizes the transition from raw marketing data to performance insights, key findings and recommended 2026 actions.
 
 ---
 
 # 🎓 Skills Demonstrated
 
-This project demonstrates the ability to combine:
+This project demonstrates practical experience in:
 
-**Data Engineering**
-
-SQL • Data Cleaning • Transformation • Data Quality • Analytical Views
-
-**Data Analysis**
-
-Customer Analytics • Marketing Analytics • Journey Analysis • KPI Analysis
-
-**NLP**
-
-Text Analysis • Sentiment Analysis • VADER
-
-**Business Intelligence**
-
-Power BI • DAX • Dashboard Design • Data Storytelling
-
-**Business Thinking**
-
-Problem Definition • Business Questions • Insight Generation • Decision Support
+* SQL data preparation
+* Relational data analysis
+* Data transformation
+* Python / Pandas / NLTK
+* Customer-review enrichment
+* Sentiment analysis
+* Power BI data modeling
+* KPI development
+* Interactive dashboard design
+* Marketing funnel analysis
+* Conversion analysis
+* Product performance analysis
+* Customer experience analytics
+* Business storytelling
+* Executive reporting
+* Translating data into actionable recommendations
 
 ---
 
-# 👩‍💻 Author
+## 👤 Author
 
 **Karima LACHHEB**
 
